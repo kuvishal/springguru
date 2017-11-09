@@ -46,6 +46,9 @@ public class Author {
 	private Set<Book> books= new HashSet<Book>();
 	
 	public Author(){}
+	public Long getId() {
+		return id;
+	}
 	public Author(String firstName, String lastName, Set<Book> books) {
 		super();
 		this.firstName = firstName;

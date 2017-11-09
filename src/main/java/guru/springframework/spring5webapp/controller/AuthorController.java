@@ -6,20 +6,23 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import guru.springframework.spring5webapp.repository.AuthorRepository;
 
+/**
+ * Created by jt on 5/  18/17.
+ */
 @Controller
 public class AuthorController {
 
-	private AuthorRepository authorRepository;
+    private AuthorRepository authorRepository;
 
-	public AuthorController(AuthorRepository authorRepository) {
-		super();
-		this.authorRepository = authorRepository;
-	}
-	
-	@RequestMapping("/authors")
-	public String getAuthors(Model model){
-		model.addAttribute("authors", authorRepository.findAll());
-		return "test";
-	}
-	
+    public AuthorController(AuthorRepository authorRepository) {
+        this.authorRepository = authorRepository;
+    }
+
+    @RequestMapping("/authors")
+    public String getAuthors(Model model){
+
+        model.addAttribute("authors", authorRepository.findAll());
+
+        return "authors";
+    }
 }
